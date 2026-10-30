@@ -1,0 +1,19 @@
+[package]
+name = "enclave-io"
+version = "0.1.0"
+edition = "2021"
+description = "The vault node's two links to the outside: Nitro Secure Module attestation, and TCP <-> vsock bridges"
+license = "MIT"
+
+[dependencies]
+aws-nitro-enclaves-nsm-api = "0.5"
+serde_bytes = "0.11"
+vsock = "0.5"
+base64 = "0.22"
+hex = "0.4"
+libc = "0.2"
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
